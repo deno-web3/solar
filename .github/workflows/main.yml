@@ -19,7 +19,7 @@ jobs:
         with:
           key: ${{ runner.os }}-deno-${{ hashFiles('**/*') }}
           restore-keys: ${{ runner.os }}-deno-
-          path: /home/runner/.cache/deno/deps/https/deno.land
+          path: /home/runner/.cache/deno
 
       - uses: denoland/setup-deno@v2
         with:
