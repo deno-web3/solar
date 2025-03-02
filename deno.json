@@ -19,5 +19,12 @@
   },
   "lint": {
     "exclude": ["**/*.cjs"]
+  },
+  "name": "@deno-web3/solar",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    "./": "./mod.ts",
+    "./types": "./types.ts"
   }
 }
