@@ -10,6 +10,14 @@
   },
   "fmt": {
     "semiColons": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "exclude": ["**/*.cjs"]
+  },
+  "tasks": {
+    "test": "deno test --coverage=coverage --allow-read",
+    "cov": "deno coverage coverage --lcov"
+  },
+  "lint": {
+    "exclude": ["**/*.cjs"]
   }
 }
