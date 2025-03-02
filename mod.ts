@@ -2,7 +2,7 @@ import { setupSolar } from './wasi.ts'
 import path from 'node:path'
 
 export class Solar {
-  async version() {
+  async version(): Promise<string> {
     const { stdout, stderr } = await setupSolar(['-j1', '--version'])
 
     if (stderr) {
