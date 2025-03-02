@@ -1,5 +1,8 @@
 {
   "imports": {
+    "@deno-web3/solc": "jsr:@deno-web3/solc@^3.0.0",
+    "@std/expect": "jsr:@std/expect@^1.0.13",
+    "@std/testing": "jsr:@std/testing@^1.0.9",
     "@types/node": "npm:@types/node@^22.13.6",
     "tinyglobby": "npm:tinyglobby@^0.2.12",
     "uwasi": "npm:uwasi@^1.4.0",

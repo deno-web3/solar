@@ -1,10 +1,76 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@deno-web3/solc@3": "3.0.0",
+    "jsr:@std/assert@^1.0.10": "1.0.11",
+    "jsr:@std/assert@^1.0.11": "1.0.11",
+    "jsr:@std/bytes@^1.0.5": "1.0.5",
+    "jsr:@std/data-structures@^1.0.6": "1.0.6",
+    "jsr:@std/expect@^1.0.13": "1.0.13",
+    "jsr:@std/fs@^1.0.9": "1.0.11",
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "jsr:@std/io@~0.225.2": "0.225.2",
+    "jsr:@std/path@^1.0.8": "1.0.8",
+    "jsr:@std/testing@^1.0.9": "1.0.9",
     "npm:@types/node@*": "22.12.0",
     "npm:@types/node@^22.13.6": "22.13.6",
     "npm:tinyglobby@~0.2.12": "0.2.12_picomatch@4.0.2",
     "npm:uwasi@^1.4.0": "1.4.0"
+  },
+  "jsr": {
+    "@deno-web3/solc@3.0.0": {
+      "integrity": "ab9c7effcd18c22c4d9f829ff9139553184e509c6074fdf8963d66c858c2ccbe",
+      "dependencies": [
+        "jsr:@std/io"
+      ]
+    },
+    "@std/assert@1.0.11": {
+      "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/bytes@1.0.5": {
+      "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
+    },
+    "@std/data-structures@1.0.6": {
+      "integrity": "76a7fd8080c66604c0496220a791860492ab21a04a63a969c0b9a0609bbbb760"
+    },
+    "@std/expect@1.0.13": {
+      "integrity": "d8e236c7089cd9fcf5e6032f27dadc3db6349d0aee48c15bc71d717bca5baa42",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.11",
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/fs@1.0.11": {
+      "integrity": "ba674672693340c5ebdd018b4fe1af46cb08741f42b4c538154e97d217b55bdd",
+      "dependencies": [
+        "jsr:@std/path"
+      ]
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    },
+    "@std/io@0.225.2": {
+      "integrity": "3c740cd4ee4c082e6cfc86458f47e2ab7cb353dc6234d5e9b1f91a2de5f4d6c7",
+      "dependencies": [
+        "jsr:@std/bytes"
+      ]
+    },
+    "@std/path@1.0.8": {
+      "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
+    },
+    "@std/testing@1.0.9": {
+      "integrity": "9bdd4ac07cb13e7594ac30e90f6ceef7254ac83a9aeaa089be0008f33aab5cd4",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.10",
+        "jsr:@std/data-structures",
+        "jsr:@std/fs",
+        "jsr:@std/internal",
+        "jsr:@std/path"
+      ]
+    }
   },
   "npm": {
     "@types/node@22.12.0": {
@@ -53,6 +119,9 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@deno-web3/solc@3",
+      "jsr:@std/expect@^1.0.13",
+      "jsr:@std/testing@^1.0.9",
       "npm:@types/node@^22.13.6",
       "npm:tinyglobby@~0.2.12",
       "npm:uwasi@^1.4.0"

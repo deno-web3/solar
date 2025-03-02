@@ -10,7 +10,6 @@ import fs from 'node:fs/promises'
 import { useMemoryFS } from 'uwasi'
 import path from 'node:path'
 import { glob } from 'tinyglobby'
-import { useFS } from 'uwasi'
 
 export const setupSolar = async (
   args: string[] = [],

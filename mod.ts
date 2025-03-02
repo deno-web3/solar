@@ -1,4 +1,3 @@
-import { Abi, EmitAbiOutput } from './types.ts'
 import { setupSolar } from './wasi.ts'
 import path from 'node:path'
 
@@ -19,7 +18,7 @@ export class Solar {
     }
     return version
   }
-  async emitAbi(source: string): Promise<EmitAbiOutput> {
+  async emitAbi(source: string): Promise<string> {
     const { stderr, stdout } = await setupSolar([
       '-j1',
       path.relative('.', source),
@@ -30,26 +29,6 @@ export class Solar {
       throw new Error(stderr)
     }
 
-    const { contracts, version } = JSON.parse(stdout) as {
-      contracts: Record<string, { abi: Abi }>
-      version: string
-    }
-
-    const output: EmitAbiOutput = {
-      contracts: {},
-      version,
-    }
-
-    for (const [name, { abi }] of Object.entries(contracts)) {
-      const [fileName, contractName] = name.split(':') as [
-        `${string}.sol`,
-        string,
-      ]
-      output.contracts[fileName] = {
-        ...output.contracts[fileName],
-        [contractName]: abi as Abi,
-      }
-    }
-    return output
+    return stdout
   }
 }
