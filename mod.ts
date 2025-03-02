@@ -31,4 +31,30 @@ export class Solar {
 
     return stdout
   }
+  async emitHashes(source: string): Promise<string> {
+    const { stderr, stdout } = await setupSolar([
+      '-j1',
+      path.relative('.', source),
+      '--emit',
+      'hashes',
+    ])
+    if (stderr) {
+      throw new Error(stderr)
+    }
+
+    return stdout
+  }
+  async emit(source: string): Promise<string> {
+    const { stderr, stdout } = await setupSolar([
+      '-j1',
+      path.relative('.', source),
+      '--emit',
+      'abi,hashes',
+    ])
+    if (stderr) {
+      throw new Error(stderr)
+    }
+
+    return stdout
+  }
 }

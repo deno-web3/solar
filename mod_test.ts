@@ -29,4 +29,44 @@ describe('Solar', () => {
         )
     })
   })
+  describe('emitHashes', () => {
+    it('should emit hashes as string', async () => {
+      const hashes = await solar.emitHashes('examples/erc20/MyToken.sol')
+
+      expect(typeof hashes).toBe('string')
+
+      expect(() => {
+        JSON.parse(hashes)
+      }).not.toThrow()
+    })
+    it('should throw error if file not found', async () => {
+      await expect(solar.emitHashes('somerandomtoken.sol')).rejects
+        .toThrow(
+          'file somerandomtoken.sol not found',
+        )
+    })
+  })
+  describe('emit', () => {
+    it('should emit ABI and hashes as string', async () => {
+      const emit = await solar.emit('examples/erc20/MyToken.sol')
+
+      expect(typeof emit).toBe('string')
+
+      expect(() => {
+        JSON.parse(emit)
+      }).not.toThrow()
+    })
+    it('should throw error if file not found', async () => {
+      await expect(solar.emit('somerandomtoken.sol')).rejects
+        .toThrow(
+          'file somerandomtoken.sol not found',
+        )
+    })
+    it('should throw error if file not found', async () => {
+      await expect(solar.emit('somerandomtoken.sol')).rejects
+        .toThrow(
+          'file somerandomtoken.sol not found',
+        )
+    })
+  })
 })

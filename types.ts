@@ -10,6 +10,9 @@ export type AbiItem = {
 export type Abi = AbiItem[]
 
 export type EmitAbiOutput = {
-  contracts: Record<`${string}.sol`, Record<string, Abi>>
+  contracts: Record<
+    `${string}.sol:${string}`,
+    { abi: Abi; hashes: Record<string, string> }
+  >
   version: string
 }

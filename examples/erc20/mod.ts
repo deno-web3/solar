@@ -1,7 +1,10 @@
-import { Solar } from '../../mod.ts'
+import { Solar } from 'solar'
+import type { EmitAbiOutput } from 'solar/types'
 
 const solar = new Solar()
 
-const { contracts } = await solar.emitAbi('./MyToken.sol')
+const { contracts } = JSON.parse(
+  await solar.emitAbi('./MyToken.sol'),
+) as EmitAbiOutput
 
 console.log(contracts)

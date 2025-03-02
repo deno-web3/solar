@@ -6,7 +6,8 @@
     "@types/node": "npm:@types/node@^22.13.6",
     "tinyglobby": "npm:tinyglobby@^0.2.12",
     "uwasi": "npm:uwasi@^1.4.0",
-    "solar": "./mod.ts"
+    "solar": "./mod.ts",
+    "solar/types": "./types.ts"
   },
   "fmt": {
     "semiColons": false,

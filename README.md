@@ -29,10 +29,11 @@ pnpm dlx jsr add @deno-web3/solar
 
 ```ts
 import { Solar } from 'solar'
+import type { EmitAbiOutput } from 'solar/types'
 
 const solar = new Solar()
 
-// emit ABI
-const abi = await solar.emitAbi('MyToken.sol')
-console.log(abi)
+const { contracts } = JSON.parse(await solar.emit('./Example.sol')) as EmitAbiOutput
+
+console.log(contracts)
 ```
