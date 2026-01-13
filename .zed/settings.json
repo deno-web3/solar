@@ -1,0 +1,8 @@
+{
+  "languages": {
+    "TypeScript": {
+      "formatter": "language_server",
+      "language_servers": ["deno"]
+    }
+  }
+}
