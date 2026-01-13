@@ -9,7 +9,7 @@ describe('Solar', () => {
     it('should return version', async () => {
       const version = await solar.version()
 
-      expect(version).toEqual('0.1.1')
+      expect(version).toEqual('0.1.8')
     })
   })
   describe('emitAbi', () => {

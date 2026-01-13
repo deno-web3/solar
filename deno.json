@@ -15,7 +15,7 @@
     "exclude": ["**/*.cjs"]
   },
   "tasks": {
-    "test": "deno test --coverage=coverage --allow-read",
+    "test": "deno test --coverage=coverage --allow-read --allow-env",
     "cov": "deno coverage --lcov > coverage.lcov"
   },
   "lint": {

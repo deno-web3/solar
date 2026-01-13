@@ -13,6 +13,6 @@ describe('Solar', () => {
   it('should emit stdout if not empty', async () => {
     const { stdout } = await setupSolar(['--version'])
 
-    expect(stdout).toContain(`solar Version: 0.1.1`)
+    expect(stdout).toContain(`solar Version: 0.1.8`)
   })
 })
