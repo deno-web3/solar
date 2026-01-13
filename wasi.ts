@@ -48,7 +48,8 @@ export const setupSolar = async (
   const bytes = await fs.readFile(
     path.join(import.meta.dirname!, './solar.wasm'),
   )
-  const { instance } = await WebAssembly.instantiate(bytes, {
+  const module = await WebAssembly.compile(bytes)
+  const instance = await WebAssembly.instantiate(module, {
     wasi_snapshot_preview1: wasi.wasiImport,
   })
 
