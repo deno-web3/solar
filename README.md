@@ -2,7 +2,7 @@
 
 experimental [Solar](https://github.com/paradigmxyz/solar) Solidity compiler bindings for Deno, Bun and Node.js.
 
-- ~15% faster than Solc
+- ~27% faster than Solc
 - smaller package size
 
 ## Install
