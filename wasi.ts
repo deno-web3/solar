@@ -45,8 +45,8 @@ export const setupSolar = async (
       }),
     ],
   })
-  const bytes = await fs.readFile(
-    path.join(import.meta.dirname!, './solar.wasm'),
+  const bytes = new Uint8Array(
+    await fs.readFile(path.join(import.meta.dirname!, './solar.wasm')),
   )
   const module = await WebAssembly.compile(bytes)
   const instance = await WebAssembly.instantiate(module, {
